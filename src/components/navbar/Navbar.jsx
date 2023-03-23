@@ -8,9 +8,9 @@ const Sidebar = () => {
     const auth = useAuth()
     console.log(auth)
     return (
-        <div className="fixed flex w-full items-center justify-between bg-transparent py-12 px-sides">
+        <div className="fixed z-20 flex w-full items-center justify-between bg-porcelain px-sides backdrop-blur-xl md:py-7 xl:py-10 2xl:py-12">
             <div>
-                <Logo width={64} height={64} />
+                <Logo width={58} height={58} />
             </div>
             <ul className="flex items-center gap-10">
                 <li>Products</li>

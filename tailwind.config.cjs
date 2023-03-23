@@ -12,7 +12,10 @@ module.exports = {
                 "mine-shaft": "#373737",
                 porcelain: "E8EAEC",
                 shakespeare: "#56A8D3",
-                'dull-lavender':'#9C8EE3'
+                "dull-lavender": "#9C8EE3",
+                "cod-gray": "#1B1B1B",
+                gallery: "#ECECEC",
+                tuna: "#36383C",
             },
             spacing: {
                 sides: "8%",

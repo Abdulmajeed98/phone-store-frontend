@@ -1,10 +1,10 @@
-import { ReactComponent as HeroIllustration } from "../../assets/illustrations/hero-illustration.svg"
-import FilledButton from "../buttons/FilledButton"
-import LinkButton from "../buttons/LinkButton"
+import { ReactComponent as HeroIllustration } from "../../../assets/illustrations/hero-illustration.svg"
+import FilledButton from "../../../components/buttons/FilledButton"
+import LinkButton from "../../../components/buttons/LinkButton"
 
 const HeroSection = () => {
     return (
-        <section className="flex h-screen justify-between px-sides pt-40">
+        <section className="flex  justify-between px-sides">
             <div className="flex -translate-y-full flex-col gap-14 self-center">
                 <div className="flex flex-col">
                     <h1 className="bg-gradient-to-r from-royal-blue to-wisteria bg-clip-text text-6xl text-transparent">Powered By</h1>
@@ -15,7 +15,7 @@ const HeroSection = () => {
                 </div>
                 <div className="flex items-center gap-7">
                     <FilledButton text="Buy Now" />
-                    <LinkButton text="Learn More" />
+                    <LinkButton text="Learn More" to="" />
                 </div>
             </div>
             <div>
