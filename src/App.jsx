@@ -4,6 +4,7 @@ import { AuthProvider } from "./shared/contexts/AuthContext"
 import { ToastContainer } from "react-toastify"
 import Navbar from "./components/navbar/Navbar"
 import "react-toastify/dist/ReactToastify.css"
+import "@splidejs/react-splide/css"
 
 export default function App() {
     return (

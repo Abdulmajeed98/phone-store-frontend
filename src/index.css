@@ -14,3 +14,18 @@ body {
 #root {
     @apply relative h-screen;
 }
+
+.splide__arrow {
+    @apply flex aspect-square w-12 items-center justify-center bg-transparent;
+}
+
+.splide__arrow svg {
+    @apply h-full w-full transform-none;
+}
+
+.splide__arrow--prev {
+    @apply md:left-1;
+}
+.splide__arrow--next {
+    @apply md:right-1;
+}

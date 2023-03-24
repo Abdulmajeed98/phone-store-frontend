@@ -4,7 +4,7 @@ import NewArrivals from "./components/NewArrivals"
 
 const Home = () => {
     const routeMatch = useRouteMatch()
-    console.log(routeMatch)
+
     return (
         <main className="pt-40">
             <HeroSection />

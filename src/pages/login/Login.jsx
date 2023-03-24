@@ -21,7 +21,6 @@ const Login = () => {
         handleSubmit,
         formState: { errors },
     } = useForm()
-    console.log(errors)
     const onSubmit = (data) => {
         // TODO: submit to backend
     }

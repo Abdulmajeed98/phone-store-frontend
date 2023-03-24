@@ -16,9 +16,13 @@ module.exports = {
                 "cod-gray": "#1B1B1B",
                 gallery: "#ECECEC",
                 tuna: "#36383C",
+                gray: "#808080",
             },
             spacing: {
                 sides: "8%",
+            },
+            aspectRatio: {
+                "4/3": "4 / 3",
             },
         },
     },
