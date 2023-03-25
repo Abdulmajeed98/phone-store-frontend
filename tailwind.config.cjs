@@ -10,7 +10,7 @@ module.exports = {
                 "royal-blue": "#4568DC",
                 wisteria: "#B06AB3",
                 "mine-shaft": "#373737",
-                porcelain: "E8EAEC",
+                porcelain: "#E8EAEC",
                 shakespeare: "#56A8D3",
                 "dull-lavender": "#9C8EE3",
                 "cod-gray": "#1B1B1B",
