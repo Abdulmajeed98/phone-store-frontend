@@ -7,7 +7,7 @@ import { ReactComponent as Logo } from "../../assets/logo.svg"
 const Sidebar = () => {
     const auth = useAuth()
     return (
-        <div className="fixed z-50 flex w-full items-center justify-between bg-porcelain px-sides backdrop-blur-xl md:py-7 xl:py-10 2xl:py-12">
+        <div className="fixed z-50 flex w-full items-center justify-between  px-sides backdrop-blur-xl md:py-7 xl:py-10 2xl:py-12">
             <div>
                 <Logo width={58} height={58} />
             </div>

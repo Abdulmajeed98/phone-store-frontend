@@ -1,7 +1,7 @@
 import { Fragment, useMemo, useState } from "react"
 import Tab from "../../../components/tab/Tab"
 import Tabs from "../../../components/tabs/Tabs"
-import { newArrivalTabs } from "../../../shared/constants/constants"
+import { COLORS_OPTIONS, NEW_ARRIVAL_TABS } from "../../../shared/constants/constants"
 import { ReactComponent as ShoppingCart } from "../../../assets/icons/shopping-cart.svg"
 import { ReactComponent as CheveronLeft } from "../../../assets/icons/cheveron-left.svg"
 import { ReactComponent as CheveronRight } from "../../../assets/icons/cheveron-right.svg"
@@ -12,10 +12,14 @@ import { newArrivalData } from "../../../mocks/mocks"
 import useMediaQuery from "../../../shared/hooks/useMediaQuery"
 import { Dialog, Transition } from "@headlessui/react"
 import FilledButton from "../../../components/buttons/FilledButton"
+import DropdownSelect from "../../../components/dropdownSelect/DropdownSelect"
+import NumberInput from "../../../components/inputs/NumberInput"
 
 const NewArrivals = () => {
-    const [selectedTab, setSelectedTab] = useState(newArrivalTabs[0].id)
+    const [selectedTab, setSelectedTab] = useState(NEW_ARRIVAL_TABS[0].id)
     const [selectedProduct, setSelectedProduct] = useState("")
+    const [selectedColor, setSelectedColor] = useState("")
+    const [quantity, setQuantity] = useState(1)
     const [isDialogOpen, setIsDialogOpen] = useState(false)
     const isDesktop = useMediaQuery("(min-width: 1440px)")
     const isIpad = useMediaQuery("(min-width: 764px)")
@@ -52,8 +56,9 @@ const NewArrivals = () => {
         }
     }, [isDesktop, isIpad])
 
-    const onTabClick = (event) => setSelectedTab(event.target.dataset.id)
+    const onTabClick = (event) => setSelectedTab(event.currentTarget.dataset.id)
     const onDialogClose = () => setIsDialogOpen(false)
+    const onQuantityChange = (event) => setQuantity(event.target.value)
     const onShopClickHandler = (event) => {
         setSelectedProduct(event.currentTarget.dataset.id)
         setIsDialogOpen(true)
@@ -64,7 +69,7 @@ const NewArrivals = () => {
             <h1 className="text-center text-4xl">New Arrival</h1>
             <div className="mb-7 flex justify-center py-8 lg:mb-14">
                 <Tabs>
-                    {newArrivalTabs.map(({ id, name }) => (
+                    {NEW_ARRIVAL_TABS.map(({ id, name }) => (
                         <Tab key={id} id={id} text={name} onClick={onTabClick} isActive={selectedTab === id} />
                     ))}
                 </Tabs>
@@ -118,7 +123,7 @@ const NewArrivals = () => {
                             leave="ease-in duration-200"
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95">
-                            <Dialog.Panel className="w-4/5 rounded bg-porcelain px-16 text-mine-shaft">
+                            <Dialog.Panel className="w-4/5 rounded bg-porcelain px-16 text-mine-shaft xl:w-1/2">
                                 <Dialog.Title className="mb-5 flex items-center justify-end pt-9">
                                     <button type="button" onClick={onDialogClose}>
                                         <Cross />
@@ -128,19 +133,16 @@ const NewArrivals = () => {
                                     <div className="aspect-square w-full flex-1 bg-mine-shaft">
                                         <img src={filteredProduct.image} alt={filteredProduct.name} className="h-full w-full object-contain" />
                                     </div>
-                                    <div className="flex-1">
-                                        <div>
+                                    <div className="flex flex-1 flex-col justify-between gap-8">
+                                        <div className="flex flex-col gap-4">
                                             <h1 className="text-4xl">{filteredProduct.name}</h1>
-                                            <h3 className="mt-6 mb-4">${filteredProduct.price}</h3>
-                                            <p>text</p>
+                                            <h3 className="mb-1">${filteredProduct.price}</h3>
+                                            <NumberInput id="quantity" label="Quantity" min={1} onChange={onQuantityChange} value={quantity} />
+                                            <DropdownSelect label="Colors" options={COLORS_OPTIONS} selectedOption={selectedColor} onSelect={setSelectedColor} />
                                         </div>
-                                        <div>
-                                            // TODO: implement dropdowns size
-                                            <br />
-                                            <br />
-                                            quantity // TODO: implement add to cart
-                                            <FilledButton size="block" text="Add to Cart" onClick={() => console.log("added to cart")} />
-                                        </div>
+
+                                        {/* TODO: implement add to cart logic  */}
+                                        <FilledButton size="block" text="Add to Cart" onClick={() => console.log("added to cart")} />
                                     </div>
                                 </div>
                             </Dialog.Panel>

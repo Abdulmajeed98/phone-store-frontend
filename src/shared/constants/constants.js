@@ -1,4 +1,4 @@
-export const newArrivalTabs = [
+export const NEW_ARRIVAL_TABS = [
     {
         id: "samsung",
         name: "Samsung",
@@ -14,5 +14,28 @@ export const newArrivalTabs = [
     {
         id: "huawei",
         name: "Huawei",
+    },
+]
+
+export const COLORS_OPTIONS = [
+    {
+        id: "deep_purple",
+        text: "Deep Purple",
+    },
+    {
+        id: "black_green",
+        text: "Black Green",
+    },
+    {
+        id: "sky_blue",
+        text: "Sky Blue",
+    },
+    {
+        id: "snow_white",
+        text: "Snow White",
+    },
+    {
+        id: "silver",
+        text: "Silver",
     },
 ]

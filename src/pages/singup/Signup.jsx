@@ -2,8 +2,8 @@ import { useEffect, useMemo } from "react"
 import { useForm } from "react-hook-form"
 import { Link } from "react-router-dom"
 import { toast } from "react-toastify"
-import PasswordInput from "../../components/passwordInput/PasswordInput"
-import EmailInput from "../../components/textInputs/EmailInput"
+import PasswordInput from "../../components/inputs/PasswordInput"
+import EmailInput from "../../components/inputs/EmailInput"
 import routeDefinitions from "../../routes/routeDefinitions"
 
 const showToast = (message) =>
