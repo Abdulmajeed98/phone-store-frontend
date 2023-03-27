@@ -8,27 +8,34 @@ import Products from "../pages/products/Products"
 import AboutUs from "../pages/aboutUs/AboutUs"
 import ContactUs from "../pages/contactUs/ContactUs"
 
+// TODO: use {Suspense} for the routes
 const Routes = () => {
     return (
         <Switch>
-            <Route>
+            <Route exact path={routes.home.path}>
                 <Navbar />
-                <Route exact path={routes.home.path}>
-                    <Home />
-                </Route>
-                <Route exact path={routes.products.path}>
-                    <Products />
-                </Route>
-                <Route exact path={routes.aboutUs.path}>
-                    <AboutUs />
-                </Route>
-                <Route exact path={routes.contactUs.path}>
-                    <ContactUs />
-                </Route>
+                <Home />
             </Route>
+
+            <Route exact path={routes.products.path}>
+                <Navbar />
+                <Products />
+            </Route>
+
+            <Route exact path={routes.aboutUs.path}>
+                <Navbar />
+                <AboutUs />
+            </Route>
+
+            <Route exact path={routes.contactUs.path}>
+                <Navbar />
+                <ContactUs />
+            </Route>
+
             <Route exact path={routes.login.path}>
                 <Login />
             </Route>
+
             <Route exact path={routes.signup.path}>
                 <Signup />
             </Route>
