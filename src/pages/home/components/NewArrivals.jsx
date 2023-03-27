@@ -1,4 +1,4 @@
-import { Fragment, useMemo, useState } from "react"
+import { useMemo, useState } from "react"
 import Tab from "../../../components/tab/Tab"
 import Tabs from "../../../components/tabs/Tabs"
 import { COLORS_OPTIONS, NEW_ARRIVAL_TABS } from "../../../shared/constants/constants"
@@ -52,7 +52,6 @@ const NewArrivals = () => {
 
     const onTabClick = (event) => setSelectedTab(event.currentTarget.dataset.id)
     const onDialogClose = () => setIsDialogOpen(false)
-
     const onShopClickHandler = (event) => {
         setSelectedProduct(event.currentTarget.dataset.id)
         setIsDialogOpen(true)
