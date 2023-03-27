@@ -1,3 +1,7 @@
+import InfoIllustration1 from "../assets/illustrations/info-illustration-1.svg"
+import InfoIllustration2 from "../assets/illustrations/info-illustration-2.svg"
+import InfoIllustration3 from "../assets/illustrations/info-illustration-3.svg"
+
 export const newArrivalData = [
     {
         id: "1",
@@ -148,5 +152,32 @@ export const productsData = [
         name: "iPhone 14 pro max deep purple",
         image: "/iPhone_14_Pro_Max.png",
         price: "499.00",
+    },
+]
+
+export const informationSectionData = [
+    {
+        id: 1,
+        image: InfoIllustration1,
+        badgeText: "We offer",
+        title: "Room-filling sound.",
+        subtitle: "You’ve never heard color like this.",
+        description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum",
+    },
+    {
+        id: 2,
+        image: InfoIllustration2,
+        badgeText: "We offer",
+        title: "Choosing your iMac.",
+        subtitle: "You’ve never heard color like this.",
+        description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum",
+    },
+    {
+        id: 3,
+        image: InfoIllustration3,
+        badgeText: "We offer",
+        title: "New MacBook Pro.",
+        subtitle: "You’ve never heard color like this.",
+        description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum",
     },
 ]

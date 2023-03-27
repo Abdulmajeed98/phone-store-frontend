@@ -1,7 +1,7 @@
 export default {
     home: {
         path: "/",
-        name: "home",
+        name: "Home",
     },
     products: {
         path: "/products",
