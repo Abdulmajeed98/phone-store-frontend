@@ -1,3 +1,5 @@
+import routes from "../../routes/routeDefinitions"
+
 export const NEW_ARRIVAL_TABS = [
     {
         id: "samsung",
@@ -39,3 +41,5 @@ export const COLORS_OPTIONS = [
         text: "Silver",
     },
 ]
+
+export const NAVBAR_NAVLINKS = Object.values(routes).filter(({ path }) => !(path === routes.login.path || path === routes.signup.path))
