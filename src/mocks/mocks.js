@@ -1,6 +1,10 @@
 import InfoIllustration1 from "../assets/illustrations/info-illustration-1.svg"
 import InfoIllustration2 from "../assets/illustrations/info-illustration-2.svg"
 import InfoIllustration3 from "../assets/illustrations/info-illustration-3.svg"
+import { ReactComponent as FacebookIcon } from "../assets/icons/facebook.svg"
+import { ReactComponent as InstagramIcon } from "../assets/icons/instagram.svg"
+import { ReactComponent as SnapchatIcon } from "../assets/icons/snapchat.svg"
+import { ReactComponent as PinterestIcon } from "../assets/icons/pinterest.svg"
 
 export const newArrivalData = [
     {
@@ -181,3 +185,78 @@ export const informationSectionData = [
         description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum",
     },
 ]
+
+export const footerData = {
+    brands: {
+        label: "Brands",
+        content: ["Apple", "Samsung", "Huawei", "Google", "Microsoft"],
+    },
+    routes: {
+        label: "Company",
+        content: [
+            {
+                name: "Products",
+                to: "/products",
+            },
+            {
+                name: "About Us",
+                to: "about-us",
+            },
+            {
+                name: "Login",
+                to: "/login",
+            },
+            {
+                name: "Sign up",
+                to: "/signup",
+            },
+        ],
+    },
+    contactUs: {
+        label: "Contact Us",
+        content: [
+            {
+                type: "anchor",
+                label: "+964 750 888 88 88",
+                href: "tel:+9647508888888",
+            },
+            {
+                type: "anchor",
+                label: "+964 750 888 00 88",
+                href: "tel:+9647508880088",
+            },
+            {
+                type: "anchor",
+                label: "contact@phonestore.com",
+                href: "mailto:contact@phonestore.com",
+            },
+            {
+                type: "link",
+                label: "Send Feedback",
+                href: "/contact",
+            },
+        ],
+    },
+    socialMedias: [
+        {
+            name: "Facebook",
+            Icon: FacebookIcon,
+            href: "https://www.facebook.com",
+        },
+        {
+            name: "Instagram",
+            Icon: InstagramIcon,
+            href: "https://www.instagram.com",
+        },
+        {
+            name: "Snapchat",
+            Icon: SnapchatIcon,
+            href: "https://www.snapchat.com",
+        },
+        {
+            name: "Pinterest",
+            Icon: PinterestIcon,
+            href: "https://www.pinterest.com",
+        },
+    ],
+}

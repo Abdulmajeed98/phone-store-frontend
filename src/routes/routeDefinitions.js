@@ -13,7 +13,7 @@ export default {
     },
     contactUs: {
         path: "/contact",
-        name: "ContactUs",
+        name: "Contact Us",
     },
     login: {
         path: "/login",

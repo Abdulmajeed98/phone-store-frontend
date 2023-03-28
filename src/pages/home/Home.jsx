@@ -1,4 +1,5 @@
 import { useRouteMatch } from "react-router-dom"
+import Footer from "../../components/footer/Footer"
 import HeroSection from "./components/HeroSection"
 import InformationSection from "./components/InformationSection"
 import NewArrivals from "./components/NewArrivals"
@@ -11,6 +12,7 @@ const Home = () => {
             <HeroSection />
             <NewArrivals />
             <InformationSection />
+            <Footer />
         </main>
     )
 }
