@@ -1,11 +1,11 @@
 import { useAuth } from "../../shared/contexts/AuthContext"
 import { ReactComponent as AccountRoundedIcon } from "../../assets/icons/account-rounded.svg"
-import { ReactComponent as SearchIcon } from "../../assets/icons/search.svg"
-import { ReactComponent as ShopBagIcon } from "../../assets/icons/shop-bag.svg"
+import { ReactComponent as ShoppingCartIcon } from "../../assets/icons/shopping-cart-outline.svg"
 import { ReactComponent as Logo } from "../../assets/logo.svg"
-import { NAVBAR_NAVLINKS } from "../../shared/constants/constants"
+import { NAVBAR_NAVLINKS, PROFILE_DROPDOWN_OPTIONS } from "../../shared/constants/constants"
 import { Link, NavLink } from "react-router-dom"
 import routes from "../../routes/routeDefinitions"
+import Dropdown from "../dropdown/Dropdown"
 
 const Sidebar = () => {
     const auth = useAuth()
@@ -27,7 +27,18 @@ const Sidebar = () => {
                 ))}
             </ul>
             <div className="flex items-center gap-6">
-                <AccountRoundedIcon />
+                <NavLink
+                    exact
+                    to={routes.cart.path}
+                    className="rounded-full bg-transparent p-2 transition-colors duration-200 hover:bg-mine-shaft hover:text-white"
+                    activeClassName="bg-gradient-to-r from-shakespeare to-dull-lavender text-white">
+                    <ShoppingCartIcon width={24} height={24} />
+                </NavLink>
+                <Dropdown
+                    options={PROFILE_DROPDOWN_OPTIONS}
+                    icon={<AccountRoundedIcon width={24} height={24} />}
+                    buttonClassName="rounded-full p-2 bg-transparent transition-colors duration-200 hover:bg-mine-shaft hover:text-white"
+                />
             </div>
         </div>
     )

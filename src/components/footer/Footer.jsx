@@ -69,7 +69,10 @@ const Footer = () => {
                 </div>
             </div>
 
-            <p className="text-center">All rights reserved &copy;{new Date().getFullYear()}</p>
+            <p className="text-center">
+                All rights reserved for <span className="bg-gradient-to-r from-shakespeare to-dull-lavender bg-clip-text font-semibold text-transparent">PhoneStore</span> &copy;
+                {new Date().getFullYear()}
+            </p>
         </footer>
     )
 }

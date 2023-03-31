@@ -7,6 +7,7 @@ import routes from "./routeDefinitions"
 import Products from "../pages/products/Products"
 import AboutUs from "../pages/aboutUs/AboutUs"
 import ContactUs from "../pages/contactUs/ContactUs"
+import Cart from "../pages/cart/Cart"
 
 // TODO: use {Suspense} for the routes
 const Routes = () => {
@@ -30,6 +31,10 @@ const Routes = () => {
             <Route exact path={routes.contactUs.path}>
                 <Navbar />
                 <ContactUs />
+            </Route>
+            <Route exact path={routes.cart.path}>
+                <Navbar />
+                <Cart />
             </Route>
 
             <Route exact path={routes.login.path}>

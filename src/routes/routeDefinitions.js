@@ -15,6 +15,10 @@ export default {
         path: "/contact",
         name: "Contact Us",
     },
+    cart: {
+        path: "/cart",
+        name: "Cart",
+    },
     login: {
         path: "/login",
         name: "login",

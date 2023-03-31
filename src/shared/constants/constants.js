@@ -42,4 +42,17 @@ export const COLORS_OPTIONS = [
     },
 ]
 
-export const NAVBAR_NAVLINKS = Object.values(routes).filter(({ path }) => !(path === routes.login.path || path === routes.signup.path))
+export const NAVBAR_NAVLINKS = Object.values(routes).filter(({ path }) => !(path === routes.login.path || path === routes.signup.path || path === routes.cart.path))
+
+export const PROFILE_DROPDOWN_OPTIONS = [
+    {
+        text: routes.login.name,
+        to: routes.login.path,
+        type: "link",
+    },
+    {
+        text: routes.signup.name,
+        to: routes.signup.path,
+        type: "link",
+    },
+]
