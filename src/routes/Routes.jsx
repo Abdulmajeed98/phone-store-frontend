@@ -32,6 +32,7 @@ const Routes = () => {
                 <Navbar />
                 <ContactUs />
             </Route>
+
             <Route exact path={routes.cart.path}>
                 <Navbar />
                 <Cart />
