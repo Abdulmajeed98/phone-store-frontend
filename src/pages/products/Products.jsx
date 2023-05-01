@@ -1,16 +1,22 @@
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import Card from "../../components/card/Card"
 import { productsData } from "../../mocks/mocks"
 import { ReactComponent as ShoppingCart } from "../../assets/icons/shopping-cart.svg"
 import AddToCartModal from "../../components/modals/AddToCartModal"
 import { COLORS_OPTIONS } from "../../shared/constants/constants"
 import Footer from "../../components/footer/Footer"
+import axios from "axios"
 
 const Products = () => {
     const [selectedProduct, setSelectedProduct] = useState("")
     const [isDialogOpen, setIsDialogOpen] = useState(false)
-
-    const filteredProduct = useMemo(() => productsData.find(({ id }) => id === selectedProduct) || {}, [productsData, selectedProduct])
+const [data,setData]=useState([])
+useEffect(()=>{
+    axios.get('http://localhost:8000/api/Allproduct').then((res)=>{
+        setData(res.data)
+    })
+})
+    const filteredProduct = useMemo(() => data.find(({ id }) => id === selectedProduct) || {}, [data, selectedProduct])
 
     const onDialogClose = () => setIsDialogOpen(false)
     const onShopClickHandler = (event) => {
@@ -23,7 +29,7 @@ const Products = () => {
             <div className="px-sides pt-32 pb-10">
                 <h1 className="mb-6 text-4xl">Products</h1>
                 <div className="grid grid-cols-1 gap-4 text-gallery md:grid-cols-2 xl:grid-cols-3 ">
-                    {productsData.map(({ id, image, name, price, title }) => (
+                    {data.map(({ id, image, name, price, title }) => (
                         <Card
                             key={id}
                             className="h-full"
