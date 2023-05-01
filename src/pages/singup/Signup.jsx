@@ -5,6 +5,8 @@ import { toast } from "react-toastify"
 import PasswordInput from "../../components/inputs/PasswordInput"
 import EmailInput from "../../components/inputs/EmailInput"
 import routeDefinitions from "../../routes/routeDefinitions"
+import axios from "axios"
+import { useHistory } from 'react-router-dom';
 
 const showToast = (message) =>
     toast.error(message, {
@@ -16,13 +18,17 @@ const showToast = (message) =>
     })
 
 const Signup = () => {
+    const history = useHistory();
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm()
     const onSubmit = (data) => {
-        // TODO: submit to backend
+        axios.post('http://localhost:8000/api/AddUser',data).then((res)=>{
+            console.log(res.data);
+            history.push('/login');
+        })
     }
     const errorValues = useMemo(() => Object.values(errors), [errors])
     useEffect(() => {

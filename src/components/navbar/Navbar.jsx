@@ -8,6 +8,8 @@ import routes from "../../routes/routeDefinitions"
 import Dropdown from "../dropdown/Dropdown"
 
 const Sidebar = () => {
+    const Email = localStorage.getItem('Email');
+
     const auth = useAuth()
     return (
         <div className="fixed z-50 flex w-full items-center justify-between  px-sides backdrop-blur-2xl md:py-7 xl:py-10 2xl:py-12">
@@ -36,7 +38,7 @@ const Sidebar = () => {
                 </NavLink>
                 <Dropdown
                     options={PROFILE_DROPDOWN_OPTIONS}
-                    icon={<AccountRoundedIcon width={24} height={24} />}
+                    icon={Email ? Email :<AccountRoundedIcon width={24} height={24} />}
                     buttonClassName="rounded-full p-2 bg-transparent transition-colors duration-200 hover:bg-mine-shaft hover:text-white"
                 />
             </div>

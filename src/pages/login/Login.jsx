@@ -1,10 +1,12 @@
 import { useEffect, useMemo } from "react"
 import { useForm } from "react-hook-form"
 import { Link } from "react-router-dom"
-import { toast } from "react-toastify"
+import { ToastContainer,toast } from "react-toastify"
 import PasswordInput from "../../components/inputs/PasswordInput"
 import EmailInput from "../../components/inputs/EmailInput"
 import routeDefinitions from "../../routes/routeDefinitions"
+import axios from "axios"
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 
 const showToast = (message) =>
     toast.error(message, {
@@ -16,13 +18,23 @@ const showToast = (message) =>
     })
 
 const Login = () => {
+    const history = useHistory();
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm()
     const onSubmit = (data) => {
-        // TODO: submit to backend
+        axios.post('http://localhost:8000/api/getUser',data).then((res)=>{
+            if(res.data.length>0){
+                localStorage.setItem('Email', res.data[0].Email)
+                history.push('/login');
+                return;
+            }else{
+                showToast("Email Or Password Wrong")
+                return ;
+            }
+        })
     }
     const errorValues = useMemo(() => Object.values(errors), [errors])
     useEffect(() => {
@@ -48,6 +60,7 @@ const Login = () => {
                     </button>
                 </div>
             </form>
+            <ToastContainer />
         </div>
     )
 }
